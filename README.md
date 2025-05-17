@@ -1,15 +1,35 @@
-# React + Vite
+# Just A Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This dashboard allows users to create and manage project pages to keep track of completed tasks efficiently.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Create a new project page** with:
+  - Title
+  - Description
+  - Due date
+- **Add tasks** to your project
+- **Delete and remove tasks** that are no longer needed
+- **Track what tasks you’ve completed** per project
 
-## Expanding the ESLint configuration
+## How It Works
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Click the **"Create Project"** button.
+2. Fill in the **project title**, **description**, and **due date**.
+3. Once created, you can start adding tasks.
+4. Mark tasks as complete or delete them as needed.
 
-// Set up Github with version control and understand about the entire flow of git commands and github repository
-// Learn about vite React folder structure
+## Tech Stack
+
+<span>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" width="50" height="50" style="margin-right: 10px;" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="VanillaJS" width="50" height="50" style="margin-right: 10px;" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="TailwindCSS" width="50" height="50" style="margin-right: 10px;" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" alt="Vite" width="50" height="50" />
+</span>
+
+React, Vanilla JS, Tailwind CSS, and Vite icons by [Devicon](https://devicon.dev), used under the [MIT License](https://opensource.org/licenses/MIT).
+
+## Purpose
+
+This tool is designed to help users stay organised and focused on their goals.
