@@ -10,7 +10,7 @@ const ProjectsNav = () => {
           </Link>
         </li>
         <li className="flex justify-center bg-white text-black p-2 rounded-md">
-          <Link to={"/dashboard/projects/more-projects"}>Projects</Link>
+          <Link to={"/dashboard/projects/personal-projects"}>Projects</Link>
         </li>
       </ul>
     </nav>
