@@ -5,9 +5,9 @@ This dashboard allows users to create and manage project pages to keep track of 
 ## Features
 
 - **Create a new project page** with:
-  - Title
+  - Name
   - Description
-  - Due date
+  - Starting Date
 - **Add tasks** to your project
 - **Delete and remove tasks** that are no longer needed
 - **Track what tasks you’ve completed** per project
@@ -15,7 +15,7 @@ This dashboard allows users to create and manage project pages to keep track of 
 ## How It Works
 
 1. Click the **"Create Project"** button.
-2. Fill in the **project title**, **description**, and **due date**.
+2. Fill in the **project title**, **description**, and **starting date**.
 3. Once created, you can start adding tasks.
 4. Mark tasks as complete or delete them as needed.
 
