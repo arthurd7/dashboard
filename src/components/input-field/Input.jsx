@@ -4,6 +4,7 @@ const Input = ({
   containerStyle,
   labelStyle,
   inputStyle,
+  onChange,
   ...rest
 }) => {
   return (
@@ -11,7 +12,13 @@ const Input = ({
       <label className={labelStyle} htmlFor={name}>
         {label}
       </label>
-      <input className={inputStyle} id={name} name={name} {...rest} />
+      <input
+        className={inputStyle}
+        onChange={onChange}
+        id={name}
+        name={name}
+        {...rest}
+      />
     </div>
   );
 };
