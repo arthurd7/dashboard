@@ -4,7 +4,7 @@ const Instruction = () => {
   return (
     <div className="flex-1 flex flex-col p-15 gap-12">
       <div className="flex justify-center mt-8">
-        <h1 className="text-3xl border-b-3">
+        <h1 className="text-3xl border-b-3 font-bold">
           Welcome to your Project Dashboard
         </h1>
       </div>
