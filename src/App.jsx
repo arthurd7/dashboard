@@ -5,10 +5,13 @@ import {
   DashboardLayout,
   Introduction,
   ProjectsLayout,
-  Profile,
-  Settings,
 } from "./pages";
-import { Instruction, CreateProject, MoreProject } from "./pages/dashboard";
+import {
+  Instruction,
+  CreateProject,
+  MoreProject,
+  ProjectDocument,
+} from "./pages/dashboard";
 
 const router = createBrowserRouter([
   {
@@ -41,15 +44,11 @@ const router = createBrowserRouter([
             path: "personal-projects",
             element: <MoreProject />,
           },
+          {
+            path: ":projectId",
+            element: <ProjectDocument />,
+          },
         ],
-      },
-      {
-        path: "profile",
-        element: <Profile />,
-      },
-      {
-        path: "settings",
-        element: <Settings />,
       },
     ],
   },
