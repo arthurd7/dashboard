@@ -8,10 +8,10 @@ const formContainerStyle = "flex";
 const formLabelStyle = "flex flex-1 font-medium text-xl";
 
 const formInputStyle =
-  "flex flex-2 border-2 border-solid border-gray-400 rounded-sm w-full p-1 placeholder-opacity-200 focus:outline-none focus:border-gray-700";
+  "flex flex-2 border-2 border-solid border-gray-500 rounded-sm w-full p-1 placeholder-opacity-200 focus:outline-none focus:border-gray-700 placeholder:opacity-50";
 
 const formTextAreaStyle =
-  "flex flex-2 border-2 border-solid border-gray-400 rounded-sm w-full p-1 h-25 focus:outline-none focus:border-gray-700 resize-none";
+  "flex flex-2 border-2 border-solid border-gray-500 rounded-sm w-full p-1 h-25 focus:outline-none focus:border-gray-700 resize-none placeholder:opacity-50";
 
 const Form = () => {
   const { setFormData } = useFormDataContext();
@@ -50,6 +50,7 @@ const Form = () => {
         type="text"
         minLength={1}
         maxLength={20}
+        placeholder="Project X..."
         containerStyle={formContainerStyle}
         labelStyle={formLabelStyle}
         inputStyle={formInputStyle}
@@ -74,6 +75,7 @@ const Form = () => {
         type="text"
         minLength={1}
         maxLength={50}
+        placeholder="Arthur Dai..."
         containerStyle={formContainerStyle}
         labelStyle={formLabelStyle}
         inputStyle={formInputStyle}
@@ -85,7 +87,8 @@ const Form = () => {
         name="description"
         value={inputValue.description}
         minLength={1}
-        maxLength={250}
+        maxLength={120}
+        placeholder="This is my first project..."
         containerStyle={formContainerStyle}
         labelStyle={formLabelStyle}
         textAreaStyle={formTextAreaStyle}

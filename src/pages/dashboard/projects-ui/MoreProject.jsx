@@ -5,7 +5,7 @@ const MoreProject = () => {
   const { formData } = useFormDataContext();
 
   return (
-    <div className="w-[calc(1200px-256px)] overflow-y-auto border-r-3 border-[#393E46]">
+    <div className="w-[calc(1200px-256px)] overflow-y-auto border-t-3 border-r-3 border-[#393E46]">
       <div className="flex flex-col gap-10 p-15  h-[calc(100vh-80px)]">
         <h1 className="text-3xl">List of Projects</h1>
 

@@ -71,7 +71,7 @@ const ProjectDocument = () => {
   }
 
   return (
-    <div className="flex flex-col flex-1 h-[calc(100vh-80px)] overflow-y-auto border-r-3 border-[#393E46]">
+    <div className="flex flex-col flex-1 h-[calc(100vh-80px)] overflow-y-auto border-t-3 border-r-3 border-[#393E46]">
       <div className="flex flex-col flex-1 gap-6 py-12 px-15">
         <div className="flex flex-row justify-between">
           <h1 className="text-5xl">{selectedProjectData.project_name}</h1>
