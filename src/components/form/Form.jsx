@@ -1,5 +1,7 @@
 import { Input, TextArea } from "../input-field";
 import { useState } from "react";
+import { useFormDataContext } from "../../contexts";
+import { v4 as uuidv4 } from "uuid";
 
 const formContainerStyle = "flex";
 
@@ -12,6 +14,7 @@ const formTextAreaStyle =
   "flex flex-2 border-2 border-solid border-gray-400 rounded-sm w-full p-1 h-25 focus:outline-none focus:border-gray-700 resize-none";
 
 const Form = () => {
+  const { setFormData } = useFormDataContext();
   const [inputValue, setInputValue] = useState({
     project_name: "",
     starting_date: "",
@@ -28,6 +31,8 @@ const Form = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
+    const newFormValue = { id: uuidv4(), ...inputValue };
+    setFormData((prev) => [...prev, newFormValue]);
   };
 
   return (
@@ -44,7 +49,7 @@ const Form = () => {
         value={inputValue.project_name}
         type="text"
         minLength={1}
-        maxLength={50}
+        maxLength={20}
         containerStyle={formContainerStyle}
         labelStyle={formLabelStyle}
         inputStyle={formInputStyle}
@@ -90,7 +95,7 @@ const Form = () => {
       <div className="flex justify-center">
         <button
           type="submit"
-          className="font-medium border-2 border-solid border-gray-500 rounded-sm px-4 py-2 cursor-pointer transition duration-300 hover:bg-gray-500 hover:border-gray-500 hover:text-white"
+          className="block font-medium border-2 border-solid border-gray-500 rounded-sm px-4 py-2 cursor-pointer transition duration-300 hover:bg-gray-500 hover:border-gray-500 hover:text-white"
         >
           Submit
         </button>
