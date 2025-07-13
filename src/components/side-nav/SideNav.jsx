@@ -1,29 +1,19 @@
 import { Link } from "react-router-dom";
 
 const linkCSS =
-  "bg-gray-500 text-white p-2 rounded-md hover:bg-white hover:text-gray-500 transition duration-300";
+  "bg-[#393E46] text-white p-3 rounded-md hover:bg-white hover:text-black transition duration-300";
 
 const SideNav = () => {
   return (
-    <nav className="flex flex-row bg-teal-500">
+    <nav className="flex flex-row bg-[#00ADB5]">
       {/* this is basically <a></a> */}
-      <div className="flex w-[50%] justify-around bg-[#FFFDD0] p-4">
+      <div className="flex bg-[#FFFDD0] w-3xs gap-3 p-4">
         <Link className={linkCSS} to={"/dashboard"}>
           Introduction
         </Link>
-        <br />
         <Link className={linkCSS} to={"/dashboard/projects"}>
           Projects
         </Link>
-        <br />
-        <Link className={linkCSS} to={"/dashboard/profile"}>
-          Profile
-        </Link>
-        <br />
-        <Link className={linkCSS} to={"/dashboard/settings"}>
-          Settings
-        </Link>
-        <br />
       </div>
     </nav>
   );
