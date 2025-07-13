@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Instruction = () => {
   return (
-    <div className="flex-1 flex flex-col p-15 gap-12">
+    <div className="flex-1 flex flex-col p-15 gap-12 border-r-3 border-[#393E46]">
       <div className="flex justify-center mt-8">
         <h1 className="text-3xl border-b-3 font-bold">
           Welcome to your Project Dashboard

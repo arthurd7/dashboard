@@ -3,7 +3,7 @@ import { ProjectsNav } from "../../components";
 
 const ProjectsLayout = () => {
   return (
-    <div className="flex min-h-[calc(100vh-72px)]">
+    <div className="flex min-h-[calc(100vh-80px)]">
       {/* Project page left side nav bar */}
       <ProjectsNav />
       {/* right side content */}
