@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Introduction = () => {
   return (
-    <div className="flex min-h-[calc(100vh-80px)] justify-center items-center border-x-3 border-t-3 border-[#393E46] p-20">
+    <div className="flex min-h-[calc(100vh-80px)] justify-center items-center border-x-3 border-t-3 border-[#393E46] py-13 px-15">
       <div className="flex flex-col justify-center gap-10">
         <div className="flex flex-col gap-5">
           <h1 className="text-7xl">Just A Dashboard</h1>
@@ -36,6 +36,10 @@ const Introduction = () => {
             >
               Let's get started
             </Link>
+          </div>
+
+          <div className="flex justify-end">
+            <h3>Created by Arthur Dai</h3>
           </div>
         </div>
       </div>
