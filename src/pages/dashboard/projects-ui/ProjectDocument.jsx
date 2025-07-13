@@ -66,8 +66,14 @@ const ProjectDocument = () => {
   }, [taskList, projectId]);
 
   // add a fallback if selectedProject is undefined or null
+  useEffect(() => {
+    if (!selectedProjectData) {
+      navigate("/dashboard/projects/create-project");
+    }
+  }, [selectedProjectData, navigate]);
+
   if (!selectedProjectData) {
-    return navigate("/dashboard/projects/create-project");
+    return null;
   }
 
   return (
