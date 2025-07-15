@@ -5,7 +5,7 @@ const Introduction = () => {
     <div className="flex min-h-[calc(100vh-80px)] justify-center items-center border-x-3 border-t-3 border-[#393E46] py-13 px-15">
       <div className="flex flex-col justify-center gap-10">
         <div className="flex flex-col gap-5">
-          <h1 className="text-7xl">Just A Dashboard</h1>
+          <h1 className="text-6xl">Just A Dashboard</h1>
           <p className="text-xl">
             This dashboard allows users to create and manage project pages to
             keep track of completed tasks efficiently.
