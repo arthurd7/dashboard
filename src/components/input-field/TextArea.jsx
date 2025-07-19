@@ -4,6 +4,7 @@ const TextArea = ({
   containerStyle,
   labelStyle,
   textAreaStyle,
+  error,
   ...rest
 }) => {
   return (
@@ -11,7 +12,11 @@ const TextArea = ({
       <label className={labelStyle} htmlFor={name}>
         {label}
       </label>
-      <textarea className={textAreaStyle} id={name} name={name} {...rest} />
+
+      <div className="flex flex-col flex-2">
+        <textarea className={textAreaStyle} id={name} name={name} {...rest} />
+        <span className="text-red-500">{error}</span>
+      </div>
     </div>
   );
 };

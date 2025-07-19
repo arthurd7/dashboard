@@ -1,17 +1,20 @@
 import { Input, TextArea } from "../input-field";
 import { useState } from "react";
 import { useFormDataContext } from "../../contexts";
+import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 const formContainerStyle = "flex";
 
-const formLabelStyle = "flex flex-1 font-medium text-xl";
+const formLabelStyle = "flex flex-1 font-medium text-xl pb-8";
+
+const formDescriptionLabelStyle = "flex flex-1 font-medium text-xl pb-24";
 
 const formInputStyle =
-  "flex flex-2 border-2 border-solid border-gray-500 rounded-sm w-full p-1 placeholder-opacity-200 focus:outline-none focus:border-gray-700 placeholder:opacity-50";
+  "flex border-2 border-solid border-gray-500 rounded-sm w-full p-1 placeholder-opacity-200 focus:outline-none focus:border-gray-700 placeholder:opacity-50";
 
 const formTextAreaStyle =
-  "flex flex-2 border-2 border-solid border-gray-500 rounded-sm w-full p-1 h-25 focus:outline-none focus:border-gray-700 resize-none placeholder:opacity-50";
+  "flex pb-4 border-2 border-solid border-gray-500 rounded-sm w-full p-1 h-25 focus:outline-none focus:border-gray-700 resize-none placeholder:opacity-50";
 
 const Form = () => {
   const { setFormData } = useFormDataContext();
@@ -21,6 +24,8 @@ const Form = () => {
     author: "",
     description: "",
   });
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleOnChange = (e) => {
     setInputValue((prev) => ({
@@ -31,8 +36,62 @@ const Form = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
+
+    const validationErrors = validateForm();
+
+    // Check if there are any errors
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors); // Show the errors
+      return; // Stop the form from submitting
+    }
+
+    // If no errors, clear old ones and save form data
+    setErrors({}); // Clear previous errors
     const newFormValue = { id: uuidv4(), ...inputValue };
     setFormData((prev) => [...prev, newFormValue]);
+    navigate(`/dashboard/projects/${newFormValue.id}`);
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    const isValidDate = !isNaN(new Date(inputValue.starting_date).getTime());
+
+    if (!inputValue.project_name.trim()) {
+      newErrors.project_name = "Project Name is required";
+    } else if (
+      !(
+        inputValue.project_name.length >= 1 &&
+        inputValue.project_name.length <= 20
+      )
+    ) {
+      newErrors.project_name = "between 1 to 20 characters";
+    }
+    if (!inputValue.starting_date.trim()) {
+      newErrors.starting_date = "Starting Date is required";
+    } else if (!isValidDate) {
+      newErrors.starting_date = "Invalid date format";
+    }
+
+    if (!inputValue.author.trim()) {
+      newErrors.author = "Author Name is required";
+    } else if (
+      !(inputValue.author.length >= 1 && inputValue.author.length <= 50)
+    ) {
+      newErrors.author = "between 1 to 50 characters";
+    }
+
+    if (!inputValue.description.trim()) {
+      newErrors.description = "Description is required";
+    } else if (
+      !(
+        inputValue.description.length >= 1 &&
+        inputValue.description.length <= 120
+      )
+    ) {
+      newErrors.description = "between 1 to 120 characters";
+    }
+
+    return newErrors;
   };
 
   return (
@@ -42,7 +101,6 @@ const Form = () => {
       action=""
       method=""
     >
-      {/* <h1>{tracking}</h1> */}
       <Input
         label="Project Name:"
         name="project_name"
@@ -55,6 +113,7 @@ const Form = () => {
         labelStyle={formLabelStyle}
         inputStyle={formInputStyle}
         onChange={handleOnChange}
+        error={errors.project_name}
       />
 
       <Input
@@ -66,6 +125,7 @@ const Form = () => {
         labelStyle={formLabelStyle}
         inputStyle={formInputStyle}
         onChange={handleOnChange}
+        error={errors.starting_date}
       />
 
       <Input
@@ -80,6 +140,7 @@ const Form = () => {
         labelStyle={formLabelStyle}
         inputStyle={formInputStyle}
         onChange={handleOnChange}
+        error={errors.author}
       />
 
       <TextArea
@@ -90,9 +151,10 @@ const Form = () => {
         maxLength={120}
         placeholder="This is my first project..."
         containerStyle={formContainerStyle}
-        labelStyle={formLabelStyle}
+        labelStyle={formDescriptionLabelStyle}
         textAreaStyle={formTextAreaStyle}
         onChange={handleOnChange}
+        error={errors.description}
       />
 
       <div className="flex justify-center">

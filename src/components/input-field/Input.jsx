@@ -5,6 +5,7 @@ const Input = ({
   labelStyle,
   inputStyle,
   onChange,
+  error,
   ...rest
 }) => {
   return (
@@ -12,13 +13,17 @@ const Input = ({
       <label className={labelStyle} htmlFor={name}>
         {label}
       </label>
-      <input
-        className={inputStyle}
-        onChange={onChange}
-        id={name}
-        name={name}
-        {...rest}
-      />
+
+      <div className="flex flex-col flex-2">
+        <input
+          className={inputStyle}
+          onChange={onChange}
+          id={name}
+          name={name}
+          {...rest}
+        />
+        <span className="text-red-500">{error}</span>
+      </div>
     </div>
   );
 };
