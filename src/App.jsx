@@ -16,14 +16,6 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/dashboard",
     element: <DashboardLayout />,
     // these are all tabs the tabs content
     children: [
@@ -51,6 +43,9 @@ const router = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    basename: "/dashboard",
   },
 ]);
 
