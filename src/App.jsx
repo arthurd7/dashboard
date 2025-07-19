@@ -1,11 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import {
-  Home,
-  Login,
-  DashboardLayout,
-  Introduction,
-  ProjectsLayout,
-} from "./pages";
+import { DashboardLayout, Introduction, ProjectsLayout } from "./pages";
 import {
   Instruction,
   CreateProject,
