@@ -20,7 +20,7 @@ const Instruction = () => {
 
       <div className="flex justify-center">
         <Link
-          to={"/dashboard/projects/create-project"}
+          to={"/projects/create-project"}
           className="font-medium border-2 border-solid border-gray-500 rounded-sm px-4 py-2 cursor-pointer transition duration-300 hover:bg-gray-500 hover:border-gray-500 hover:text-white"
         >
           Create Project +

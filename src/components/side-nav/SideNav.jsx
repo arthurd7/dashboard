@@ -8,10 +8,10 @@ const SideNav = () => {
     <nav className="flex flex-row bg-[#00ADB5]">
       {/* this is basically <a></a> */}
       <div className="flex bg-[#FFFDD0] w-3xs gap-3 p-4">
-        <Link className={linkCSS} to={"/dashboard"}>
+        <Link className={linkCSS} to={"/"}>
           Introduction
         </Link>
-        <Link className={linkCSS} to={"/dashboard/projects"}>
+        <Link className={linkCSS} to={"/projects"}>
           Projects
         </Link>
       </div>

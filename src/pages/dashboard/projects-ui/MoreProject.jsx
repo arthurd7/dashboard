@@ -13,7 +13,7 @@ const MoreProject = () => {
           {formData.map((data) => {
             return (
               <Link
-                to={`/dashboard/projects/${data.id}`}
+                to={`/projects/${data.id}`}
                 className="flex flex-col gap-3 border-2 border-solid border-black rounded-md p-5"
                 key={data.id}
               >

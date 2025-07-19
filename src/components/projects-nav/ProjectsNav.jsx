@@ -10,7 +10,7 @@ const ProjectsNav = () => {
         <li className="flex bg-white text-black rounded-md">
           <Link
             className="flex justify-center w-full p-2"
-            to={"/dashboard/projects/create-project"}
+            to={"/projects/create-project"}
           >
             Create Project +
           </Link>
@@ -18,7 +18,7 @@ const ProjectsNav = () => {
         <li className="flex bg-white text-black rounded-md">
           <Link
             className="flex justify-center w-full p-2"
-            to={"/dashboard/projects/personal-projects"}
+            to={"/projects/personal-projects"}
           >
             Projects
           </Link>
@@ -35,7 +35,7 @@ const ProjectsNav = () => {
             <li key={data.id} className="flex bg-white text-black rounded-md">
               <Link
                 className="flex justify-center w-full p-2"
-                to={`/dashboard/projects/${data.id}`}
+                to={`/projects/${data.id}`}
               >
                 {data.project_name}
               </Link>

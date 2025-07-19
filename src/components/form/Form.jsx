@@ -49,7 +49,7 @@ const Form = () => {
     setErrors({}); // Clear previous errors
     const newFormValue = { id: uuidv4(), ...inputValue };
     setFormData((prev) => [...prev, newFormValue]);
-    navigate(`/dashboard/projects/${newFormValue.id}`);
+    navigate(`/projects/${newFormValue.id}`);
   };
 
   const validateForm = () => {
