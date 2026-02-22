@@ -2,6 +2,8 @@
 
 This dashboard allows users to create and manage project pages to keep track of completed tasks efficiently.
 
+🔗 [Live Demo](https://arthurd7.github.io/dashboard/)
+
 ## Features
 
 - **Create a new project page** with:
